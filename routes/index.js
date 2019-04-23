@@ -7,7 +7,7 @@ const connection = mysql.createConnection({
     user    : 'neos',
     password: 'neos',
     database: 'ldk_test'
-})
+});
 
 router.get('/companyInfo', function(req, res, next){
     res.send({ name: 'dev-jitsu', location: 'fast-five'});
@@ -22,12 +22,12 @@ router.get('/slideshow', (req, res) => {
     connection.query(sql, (err, result) => {
         if(err){
             console.error(err);
-            res.status(500).render('error', {error: err});
+            res.status(500).render({error: err});
         }else{
             console.log('slide show query success!!');
             res.status(200).send(result);
         }
-    })
+    });
 });
 
 module.exports = router;
