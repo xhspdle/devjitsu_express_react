@@ -1,0 +1,16 @@
+{
+    "img": [
+        {
+            "pic_id": 1,
+            "pic_extension": "gif"
+        },
+        {
+            "pic_id": 2,
+            "pic_extension": "gif"
+        },
+        {
+            "pic_id": 3,
+            "pic_extension": "gif"
+        }
+    ]
+}
