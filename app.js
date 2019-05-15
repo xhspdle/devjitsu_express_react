@@ -22,7 +22,8 @@ app.use('/', indexRouter);
 console.log('[[ process.env.NODE_ENV ]] : ' + process.env.NODE_ENV);
 /*
     NODE_ENV 셋팅 방법
-    - powershell: $env:NODE_ENV="production"
+    - powershell : $env:NODE_ENV="production"
+    - linux : export NODE_ENV=production
 */
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static(path.join(__dirname, 'client/build')));
