@@ -2,13 +2,9 @@ const express = require('express');
 const path = require('path');
 const router = express.Router();
 const mysql = require('mysql');
-const connection = mysql.createConnection({
-    host    : '183.97.28.253',
-    port    : 43306,//port는 int
-    user    : 'neos',
-    password: 'neos',
-    database: 'ldk_test'
-});
+
+const dbconfig = require('./config/db-config.json');
+const connection = mysql.createConnection(dbconfig);
 
 router.get('/companyInfo', function(req, res, next){
     res.send({ name: 'dev-jitsu', location: 'fast-five'});
