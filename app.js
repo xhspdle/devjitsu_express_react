@@ -4,7 +4,8 @@ const path = require('path');
 const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const contactRouter = require('./routes/contact');
+//const usersRouter = require('./routes/users');
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 
 app.use('/', indexRouter);
+app.use('/contact', contactRouter);
 //app.use('/users', usersRouter);
 
 console.log('[[ process.env.NODE_ENV ]] : ' + process.env.NODE_ENV);
