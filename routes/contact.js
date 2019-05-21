@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const dbConn = require('./config/dbconnection');
+const dbConn = require('./data/dbconnection');
 
 router.post('/insert', (req, res) => {
     let sql =   `INSERT INTO contact(

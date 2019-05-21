@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const router = express.Router();
-const dbConn = require('./config/dbconnection');
+const dbConn = require('./data/dbconnection');
 
 router.get('/companyInfo', function(req, res, next){
     res.send({ name: 'dev-jitsu', location: 'fast-five'});
