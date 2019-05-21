@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const mysql = require('mysql');
-
-const dbconfig = require('./config/db-config.json');
-const connection = mysql.createConnection(dbconfig);
+const dbConn = require('./config/dbconnection');
 
 router.post('/insert', (req, res) => {
     let sql =   `INSERT INTO contact(
@@ -18,7 +15,7 @@ router.post('/insert', (req, res) => {
                 , "${req.body.message}"
                 , NOW()
                 )`;
-    connection.query(sql, (err, result) => {
+        dbConn.query(sql, (err, result) => {
         if(err){
             console.error(err);
             res.status(500).render({error: err});

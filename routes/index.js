@@ -1,10 +1,7 @@
 const express = require('express');
 const path = require('path');
 const router = express.Router();
-const mysql = require('mysql');
-
-const dbconfig = require('./config/db-config.json');
-const connection = mysql.createConnection(dbconfig);
+const dbConn = require('./config/dbconnection');
 
 router.get('/companyInfo', function(req, res, next){
     res.send({ name: 'dev-jitsu', location: 'fast-five'});
@@ -16,7 +13,7 @@ router.get('/express_backend', (req, res) => {
 
 router.get('/slideshow_MySQL', (req, res) => {
     let sql = 'SELECT * FROM slide_show';
-    connection.query(sql, (err, result) => {
+    dbConn.query(sql, (err, result) => {
         if(err){
             console.error(err);
             res.status(500).render({error: err});
