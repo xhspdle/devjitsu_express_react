@@ -11,17 +11,16 @@ router.get('/express_backend', (req, res) => {
     res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT'});
 });
 
-router.get('/slideshow_MySQL', (req, res) => {
-    let sql = 'SELECT * FROM slide_show';
-    dbConn.query(sql, (err, result) => {
-        if(err){
-            console.error(err);
-            res.status(500).render({error: err});
-        }else{
-            console.log('slide show query success!!');
-            res.status(200).send(result);
-        }
-    });
+router.get('/slideshow_MySQL', async (req, res) => {
+    try{
+        const [rows] = await dbConn.execute(`SELECT * FROM slide_show`);
+        console.log('slide show query success!!');
+        res.status(200).send(rows);
+    } catch(e) {
+        console.error(e);
+        res.status(500).render({error: e});
+    }
+
 });
 
 /*
