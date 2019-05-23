@@ -2080,11 +2080,6 @@ rimraf@^2.6.1:
   dependencies:
     glob "^7.1.3"
 
-rotating-file-stream@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/rotating-file-stream/-/rotating-file-stream-1.4.1.tgz#e378ff23b91e7960792cdc5cdeb121fc59d36003"
-  integrity sha512-80lz0OFYQ5p2ncW5RFq1TgxZmoNGlIhhDWhUQE9XNGYkrOH3fENdA1kMLaN0C7L9igRmCgnFd3NWgRRXVnV5tA==
-
 safe-buffer@5.1.2, safe-buffer@^5.0.1, safe-buffer@^5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"

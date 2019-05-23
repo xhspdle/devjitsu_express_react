@@ -16,8 +16,7 @@
     "morgan": "^1.9.1",
     "mysql2": "^1.6.5",
     "nodemon": "^1.18.11",
-    "pug": "^2.0.3",
-    "rotating-file-stream": "^1.4.1"
+    "pug": "^2.0.3"
   },
   "repository": "https://github.com/xhspdle/devjitsu_express_react.git"
 }

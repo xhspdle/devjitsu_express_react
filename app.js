@@ -2,8 +2,6 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
-const fs = require('fs');
-const rfs = require('rotating-file-stream');
 const helmet = require('helmet');
 // const session = require('express-session');
 
@@ -13,15 +11,12 @@ const contactRouter = require('./routes/contact');
 
 const app = express();
 // var sess = {
-//     store: new RedisStore(),
+//     store: new RedisStore(), //세션을 redis에 담아야 메모리 누수가 안생김
 //     secret: 'keyboard cat',
 //     resave: false,
 //     saveUninitialized: true,
 //     cookie: {}
 // }
-
-var logDirectory = path.join(__dirname, 'log');
-fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 
 app.use(helmet());
 
@@ -30,16 +25,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));
-
-app.use(logger(
-    'common',
-    {
-        stream: rfs('access.log', {
-        interval: '2d',
-        path: logDirectory
-        })
-    }
-));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
