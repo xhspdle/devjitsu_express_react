@@ -5,19 +5,20 @@ const logger = require('morgan');
 const fs = require('fs');
 const rfs = require('rotating-file-stream');
 const helmet = require('helmet');
-const session = require('express-session');
+// const session = require('express-session');
 
 const indexRouter = require('./routes/index');
 const contactRouter = require('./routes/contact');
 //const usersRouter = require('./routes/users');
 
 const app = express();
-var sess = {
-    secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: true,
-    cookie: {}
-}
+// var sess = {
+//     store: new RedisStore(),
+//     secret: 'keyboard cat',
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: {}
+// }
 
 var logDirectory = path.join(__dirname, 'log');
 fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
@@ -54,8 +55,8 @@ console.log('[[ process.env.NODE_ENV ]] : ' + process.env.NODE_ENV);
     - linux : export NODE_ENV=production
 */
 if(process.env.NODE_ENV === 'production'){
-    app.set('trust proxy', 1);
-    sess.cookie.secure = true;
+    // app.set('trust proxy', 1);
+    // sess.cookie.secure = true;
 
     app.use(express.static(path.join(__dirname, 'client/build')));
     app.get('*', (req, res) => {
@@ -63,7 +64,7 @@ if(process.env.NODE_ENV === 'production'){
     });
 }
 
-app.use(session(sess));
+// app.use(session(sess));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next){
