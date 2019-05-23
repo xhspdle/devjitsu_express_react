@@ -2,18 +2,44 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
+const fs = require('fs');
+const rfs = require('rotating-file-stream');
+const helmet = require('helmet');
+const session = require('express-session');
 
 const indexRouter = require('./routes/index');
 const contactRouter = require('./routes/contact');
 //const usersRouter = require('./routes/users');
 
 const app = express();
+var sess = {
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {}
+}
+
+var logDirectory = path.join(__dirname, 'log');
+fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
+
+app.use(helmet());
 
 // view engine setpup(for error page)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));
+
+app.use(logger(
+    'common',
+    {
+        stream: rfs('access.log', {
+        interval: '2d',
+        path: logDirectory
+        })
+    }
+));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 
@@ -28,11 +54,16 @@ console.log('[[ process.env.NODE_ENV ]] : ' + process.env.NODE_ENV);
     - linux : export NODE_ENV=production
 */
 if(process.env.NODE_ENV === 'production'){
+    app.set('trust proxy', 1);
+    sess.cookie.secure = true;
+
     app.use(express.static(path.join(__dirname, 'client/build')));
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
     });
 }
+
+app.use(session(sess));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next){

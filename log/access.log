@@ -1,0 +1,22 @@
+
+::ffff:127.0.0.1 - - [23/May/2019:06:40:37 +0000] "GET /express_backend HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [23/May/2019:06:40:37 +0000] "GET /companyInfo HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [23/May/2019:06:40:37 +0000] "GET /slideshow_MySQL HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [23/May/2019:06:44:17 +0000] "GET /express_backend HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [23/May/2019:06:44:17 +0000] "GET /companyInfo HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [23/May/2019:06:44:17 +0000] "GET /slideshow_MySQL HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [23/May/2019:06:46:35 +0000] "GET /express_backend HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [23/May/2019:06:46:35 +0000] "GET /companyInfo HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [23/May/2019:06:46:35 +0000] "GET /slideshow_MySQL HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [23/May/2019:06:48:54 +0000] "GET /express_backend HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [23/May/2019:06:48:54 +0000] "GET /companyInfo HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [23/May/2019:06:48:54 +0000] "GET /slideshow_MySQL HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [23/May/2019:06:49:04 +0000] "GET /express_backend HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [23/May/2019:06:49:04 +0000] "GET /companyInfo HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [23/May/2019:06:49:04 +0000] "GET /slideshow_MySQL HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [23/May/2019:06:50:20 +0000] "GET /express_backend HTTP/1.1" 200 56
+::ffff:127.0.0.1 - - [23/May/2019:06:50:20 +0000] "GET /companyInfo HTTP/1.1" 200 43
+::ffff:127.0.0.1 - - [23/May/2019:06:50:21 +0000] "GET /slideshow_MySQL HTTP/1.1" 200 106
+::ffff:127.0.0.1 - - [23/May/2019:06:54:26 +0000] "GET /express_backend HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [23/May/2019:06:54:26 +0000] "GET /companyInfo HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [23/May/2019:06:54:26 +0000] "GET /slideshow_MySQL HTTP/1.1" 304 -

@@ -11,9 +11,12 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "helmet": "^3.18.0",
     "morgan": "^1.9.1",
     "mysql2": "^1.6.5",
     "nodemon": "^1.18.11",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "rotating-file-stream": "^1.4.1"
   }
 }
