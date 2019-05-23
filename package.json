@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
-  "author": "",
+  "author": "xhspdle <xhspdle@naver.com>",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
@@ -18,5 +18,6 @@
     "nodemon": "^1.18.11",
     "pug": "^2.0.3",
     "rotating-file-stream": "^1.4.1"
-  }
+  },
+  "repository": "https://github.com/xhspdle/devjitsu_express_react.git"
 }
